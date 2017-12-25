@@ -9,10 +9,11 @@ namespace HomeInsurance.Controllers {
             return View(new Homeowner());
         }
 
-        [HttpPost] public ActionResult HomeownerForm(Homeowner homeOwner) {
-            if (!ModelState.IsValid) {
-                return View(homeOwner);
-            }
+		[HttpPost]
+		public ActionResult HomeownerForm(Homeowner homeOwner) {
+			if (!ModelState.IsValid) {
+				return View(homeOwner);
+			}
 
             Session["Homeowner"] = homeOwner;
             return RedirectToAction("LocationForm", "Location");

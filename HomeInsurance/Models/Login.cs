@@ -1,13 +1,10 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HomeInsurance.Models
-{
+namespace HomeInsurance.Models {
 
     [NotMapped]
-    public class Login
-    {
+    public class Login {
 
         [Required]
         [StringLength(20)]
