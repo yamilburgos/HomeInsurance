@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HomeInsurance.Models.Quote>
+
+@{
+    ViewBag.Title = "QuoteDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>QuoteDetails</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.Location.ResidenceType)
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.Location.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.Location.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.Location.Zip)
+        </th>
+        <th>
+            Rest of Information
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.Location.ResidenceType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.Location.AddressLines)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.Location.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.Location.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.Location.Zip)
+        </td>
+        <td>
+            @Html.ActionLink("Click", "QuoteSummary", new { quoteId = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

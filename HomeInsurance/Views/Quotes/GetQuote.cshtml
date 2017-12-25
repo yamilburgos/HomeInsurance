@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "GetQuote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Get an online quote</h2>
+
+@Html.ActionLink("Get a Quote", "HomeownerForm", "Homeowner", "", new { @class = "btn btn-primary" })
+@Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", null, new { @class = "btn btn-default" })

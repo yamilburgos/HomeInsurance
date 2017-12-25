@@ -1,0 +1,58 @@
+﻿@model HomeInsurance.Models.User
+
+@{
+    ViewBag.Title = "LoginUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <p>
+        Home insurance, also commonly called hazard insurance or homeowner's insurance, is a type of property insurance that covers
+        a private residence, such as a condominium or renters' insurance or home or multiple unit buildings.
+    </p>
+    <p>
+        It is an insurance policy that combines various personal insurance protections, which can include losses occurring to one's
+        home, its contents, loss of use (additional living expenses), or loss of other personal possessions of the homeowner, as
+        well as liability insurance for accidents that may happen at the home or at the hands of the homeowner within the policy
+        territory. If a home does not meet the underwriting guidelines of a standard homeowners policy the residence could qualify
+        for a limited coverage dwelling policy.
+    </p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Login" class="btn btn-default" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div div class="col-md-10">
+            <p>New User? @Html.ActionLink("Register here", "NewUser", "Welcome", null, new { @class = "toplink" })</p>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,47 @@
+﻿@model HomeInsurance.Models.User
+
+@{
+    ViewBag.Title = "Login User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("LoginUser", "Welcome")) {
+    <div class="row">
+        <div class="col-md-4">
+            <p>
+                Home insurance, also commonly called hazard insurance or homeowner's insurance, is a type of property insurance that covers
+                a private residence, such as a condominium or renters' insurance or home or multiple unit buildings.
+            </p>
+            <p>
+                It is an insurance policy that combines various personal insurance protections, which can include losses occurring to one's
+                home, its contents, loss of use (additional living expenses), or loss of other personal possessions of the homeowner, as
+                well as liability insurance for accidents that may happen at the home or at the hands of the homeowner within the policy
+                territory. If a home does not meet the underwriting guidelines of a standard homeowners policy the residence could qualify
+                for a limited coverage dwelling policy.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Login now to get an online quote</h2>
+            @Html.ValidationSummary(true, "Please fix the following errors.")
+            <h3><b>For Existing users: </b></h3>
+
+            <div class="form-group-flex">
+                @Html.LabelFor(u => u.Username, new { @class = "padding-label" })
+                @Html.TextBoxFor(u => u.Username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Username)
+            </div>
+
+            <div class="form-group-flex">
+                @Html.LabelFor(u => u.Password, new { @class = "padding-label" })
+                @Html.TextBoxFor(u => u.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Password)
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+
+            <p>
+                New User? @Html.ActionLink("Register here", "NewUser", "Welcome", new { @class = "toplink" })
+            </p>
+        </div>
+    </div>  
+}

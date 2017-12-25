@@ -1,0 +1,22 @@
+﻿@model HomeInsurance.Models.Quote
+
+@{
+    ViewBag.Title = "Quote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Coverage Details</h2>
+
+@Html.ActionLink("Learn more", "QuoteTerms", "Details")
+
+<ul>
+    <li>Monthly Premium: @Model.Premium</li>
+    <li>Dwelling Coverage: @Model.DwellingCoverage</li>
+    <li>Detached Structures: @Model.DetachedStructure</li>
+    <li>Personal Property: @Model.PersonalProperty</li>
+    <li>Additional living expense: @Model.AddnlLivgExpense</li>
+    <li>Medical Expense: @Model.MedicalExpense</li>
+    <li>Deductible: @Model.Deductible</li>
+</ul>
+
+@Html.ActionLink("Retrieve Quote", "BuyQuote", null, new { @class = "btn btn-primary" })

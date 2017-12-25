@@ -1,0 +1,58 @@
+﻿@model HomeInsurance.Models.Location
+
+@{
+    ViewBag.Title = "Location";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home Location</h2>
+
+@using (Html.BeginForm("LocationForm", "Location")) {
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.ResidenceType, new { @class = "padding-label" })
+
+        @Html.DropDownListFor(l => l.ResidenceType, new SelectList(HomeInsurance.Controllers.QuotesController.ResidenceTypes),
+                 "Select Residence Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(l => l.ResidenceType)
+
+    </div>
+
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.AddressLine1, new { @class = "padding-label" })
+        @Html.TextBoxFor(l => l.AddressLine1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(l => l.AddressLine1)
+    </div>
+
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.AddressLine2, new { @class = "padding-label" })
+        @Html.TextBoxFor(l => l.AddressLine2, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.City, new { @class = "padding-label" })
+        @Html.TextBoxFor(l => l.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(l => l.City)
+    </div>
+
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.State, new { @class = "padding-label" })
+        @Html.TextBoxFor(l => l.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(l => l.State)
+    </div>
+
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.Zip, new { @class = "padding-label" })
+        @Html.TextBoxFor(l => l.Zip, new { @class = "form-control" })
+        @Html.ValidationMessageFor(l => l.Zip)
+    </div>
+
+    <div class="form-group-flex">
+        @Html.LabelFor(l => l.ResidenceUse, new { @class = "padding-label" })
+        @*
+            @Html.DropDownListFor(l => l.ResidenceType, new SelectList(Model.ResidenceUses, "Id", "Name"),
+                "Select Residence Use", new { @class = "form-control" }))
+        *@
+    </div>
+
+    <button type="submit" class="btn btn-primary">Continue</button>
+}

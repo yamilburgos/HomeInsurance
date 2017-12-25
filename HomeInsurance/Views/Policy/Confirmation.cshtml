@@ -1,0 +1,18 @@
+﻿@model HomeInsurance.Models.Policy
+
+@{
+    ViewBag.Title = "Confirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Policy Confirmation</h2>
+
+<p>Our customer service representative will contact you shortly for premium collection arrangements.</p>
+<ul>
+    <li>Quote Id: </li>
+    <li>Policy Key: @Model.PolicyKey</li>
+    <li>Policy Effective Date: @Model.PolicyEffDate</li>
+    <li>Policy End Date: @Model.PolicyEndDate</li>
+    <li>Policy Term: @Model.PolicyTerm</li>
+    <li>Policy Status: @Model.PolicyStatus</li>
+</ul>

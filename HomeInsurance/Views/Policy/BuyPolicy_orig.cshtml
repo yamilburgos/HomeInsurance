@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "BuyPolicy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Buy Policy</h2>
+
+<p>Quote to Buy: </p>
+
+@Html.ActionLink("Read terms and conditions before buying policy", "PolicyTerms", "Details")
+
+<p>Enter Policy Start Date: (yyyy-MM-dd)</p>
+
+<p>Policy start date cannot be more than 60 days from today's date</p>
+
+<p>This is to acknowledge that I have read the terms and conditions of the policy.</p>
+
+<button class="btn btn-default">@Html.ActionLink("Submit", "Confirmation", "Quotes")</button>

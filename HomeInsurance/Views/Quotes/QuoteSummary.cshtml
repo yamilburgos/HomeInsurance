@@ -1,0 +1,64 @@
+﻿@model HomeInsurance.Models.Quote
+
+@{
+    ViewBag.Title = "QuoteSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">QuoteSummary</h2>
+
+<div align="center">
+    @Html.ActionLink("Learn more", "QuoteTerms", "Details")
+
+    <h3>Monthly Premium @Model.Premium</h3>
+    @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", "", new { @class = "btn btn-primary" })
+
+    <h3>Location Details</h3>
+    <ul>
+        <li>Quote ID: @Model.Id</li>
+        <li>Residence Type: @Model.Property.Location.ResidenceType</li>
+        <li>Address Line 1: @Model.Property.Location.AddressLine1</li>
+        <li>Address Line 2: @Model.Property.Location.AddressLine2</li>
+        <li>City: @Model.Property.Location.City</li>
+        <li>State: @Model.Property.Location.State</li>
+        <li>Zip: @Model.Property.Location.Zip</li>
+        <li>Residence Use: @Model.Property.Location.ResidenceUse</li>
+        <li>Username: @Model.Property.Location.Username</li>
+    </ul>
+
+    <h3>Homeowner Details</h3>
+    <ul>
+        <li>First Name: @Model.Property.Location.Homeowner.FirstName</li>
+        <li>Last Name: @Model.Property.Location.Homeowner.LastName</li>
+        <li>Date of Birth: @Model.Property.Location.Homeowner.DOB</li>
+        <li>Is Retired: @Model.Property.Location.Homeowner.IsRetired</li>
+        <li>Social Security Number: @Model.Property.Location.Homeowner.SSN</li>
+        <li>Email Address: @Model.Property.Location.Homeowner.EmailAddress</li>
+    </ul>
+
+    <h3>Property Details</h3>
+    <ul>
+        <li>Market Value: @Model.Property.MarketValue</li>
+        <li>Year Built: @Model.Property.YearBuilt</li>
+        <li>Square Footage: @Model.Property.SquareFootage</li>
+        <li>Dwelling Style: @Model.Property.DwellingStyle</li>
+        <li>Roof Material: @Model.Property.RoofMaterial</li>
+        <li>Garage Type: @Model.Property.GarageType</li>
+        <li>Number of Full Baths: @Model.Property.NumFullBaths</li>
+        <li>Number of Half Baths: @Model.Property.NumHalfBaths</li>
+        <li>Has Swimming Pool: @Model.Property.HasSwimmingPool</li>
+    </ul>
+
+    <h3>Coverage Details</h3>
+    <ul>
+        <li>Monthly Premium: @Model.Premium</li>
+        <li>Dwelling Coverage: @Model.DwellingCoverage</li>
+        <li>Detached Structures: @Model.DetachedStructure</li>
+        <li>Personal Property: @Model.PersonalProperty</li>
+        <li>Additional living expense: @Model.AddnlLivgExpense</li>
+        <li>Medical Expense: @Model.MedicalExpense</li>
+        <li>Deductible: @Model.Deductible</li>
+    </ul>
+
+    @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", "", new { @class = "btn btn-primary" })
+</div>
