@@ -5,13 +5,14 @@ namespace HomeInsurance.Models {
 
     public class IsAlphanumeric : ValidationAttribute {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
-            if(value == null)
-                return new ValidationResult("This field cannot be empty.");
-            if (string.IsNullOrEmpty(value.ToString()))
+			string stringValue = value as string;
+
+			if (string.IsNullOrEmpty(stringValue))
                 return new ValidationResult("This field cannot be empty.");
 
             Regex regexCheck = new Regex("^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$");
-            if (!regexCheck.IsMatch(value.ToString()))
+
+            if (!regexCheck.IsMatch(stringValue))
                 return new ValidationResult("Only Alphabets and Numbers allowed.");
 
             return ValidationResult.Success;

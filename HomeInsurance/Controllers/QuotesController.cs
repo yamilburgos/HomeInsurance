@@ -13,6 +13,7 @@ namespace HomeInsurance.Controllers {
         public ActionResult GetQuote() {
             return View();
         }
+
 		// Full summary of Quote/Property/Location
 		public ActionResult QuoteSummary(int? quoteId) {
 			if (!quoteId.HasValue) {
@@ -50,6 +51,13 @@ namespace HomeInsurance.Controllers {
                 if (ho == null) {
 					// Redirect to ???
 					return View(quotes);
+				}
+
+				quotes.AddRange(qe.Quotes.Where(q => q.Property.Location.HomeownerId == ho.Id));
+				return View(quotes);
+			}
+		}
+
         public ActionResult QuoteForm() {
             Property property = Session["Property"] as Property;
             Quote quote = new Quote(property);
@@ -59,28 +67,28 @@ namespace HomeInsurance.Controllers {
 			return View(quote);
 		}
 
-        public ActionResult BuyQuote() {
-            Quote quote = Session["Quote"] as Quote;
-            Property property = Session["Property"] as Property;
-            Location location = Session["Location"] as Location;
-            Homeowner homeowner = Session["Homeowner"] as Homeowner;
-            User user = Session["User"] as User;
+		public ActionResult SaveQuote() {
+			Quote quote = Session["Quote"] as Quote;
+			Property property = Session["Property"] as Property;
+			Location location = Session["Location"] as Location;
+			Homeowner homeowner = Session["Homeowner"] as Homeowner;
+			User user = Session["User"] as User;
 
-            quote.Property = property;
-            property.Location = location;
-            location.Homeowner = homeowner;
+			quote.Property = property;
+			property.Location = location;
+			location.Homeowner = homeowner;
 
-            homeowner.User = user;
-            homeowner.UserId = user.Id;
+			//homeowner.User = user;
+			homeowner.UserId = user.Id;
 
-            using(QuotesEntity qe = new QuotesEntity()) {
+			using (QuotesEntity qe = new QuotesEntity()) {
                 qe.Quotes.Add(quote);
                 qe.SaveChanges();
-            }
-            Session.Clear();
-            Session["User"] = user;
-            return RedirectToAction("QuoteDetails");
+			}
 
-        }
-
+			Session.Clear();
+			Session["User"] = user;
+			return RedirectToAction("QuoteDetails");
+		}
+	}
 }
