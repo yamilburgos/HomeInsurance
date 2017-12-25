@@ -4,75 +4,58 @@ using System.Web.Mvc;
 
 namespace HomeInsurance.Controllers {
 
-    public class WelcomeController : Controller {
-        #region Database Code
-        private QuotesEntity _context;
+	public class WelcomeController : Controller {
+		#region LoginUser
+		public ActionResult LoginUser() {
+			return View();
+		}
 
-        public WelcomeController() {
-            _context = new QuotesEntity();
-        }
+		[HttpPost]
+		public ActionResult LoginUser(User user) {
+			if (!ModelState.IsValid) {
+				return View("LoginUser");
+			}
 
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();
-        }
-        #endregion
+			using(QuotesEntity qe = new QuotesEntity()) {
+				User existing = qe.Users.FirstOrDefault(u => u.Password == user.Password && u.Username == user.Username);
 
-        #region LoginUser
-        public ActionResult LoginUser()
-        {
-            return View();
-        }
+				if (existing == null) {
+					ModelState.AddModelError("", "The user name or password provided is incorrect.");
+					return View("LoginUser", user);
+				}
 
-        [HttpPost]
-        public ActionResult LoginUser(User user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View("LoginUser");
-            }
+				Session["User"] = existing;
+				return RedirectToAction("GetQuote", "Quotes");
+			}
+		}
+		#endregion
 
-            User existing = _context.Users.FirstOrDefault(u => u.Password == user.Password && u.Username == user.Username);
+		#region NewUser
+		public ActionResult NewUser() {
+			return View("NewUser", new Login());
+		}
 
-            if (existing == null) {
-                ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                return View("LoginUser", user);
-            }
+		[HttpPost]
+		public ActionResult NewUser(Login login) {
+			if (!ModelState.IsValid) {
+				return View("NewUser", login);
+			}
 
-            Session["User"] = existing;
-            return RedirectToAction("GetQuote", "Quotes");
-        }
-        #endregion
+			using (QuotesEntity qe = new QuotesEntity()) {
+				User u = qe.Users.FirstOrDefault(usr => usr.Username == login.Username);
 
-        #region NewUser
-        public ActionResult NewUser()
-        {
-            return View("NewUser", new Login());
-        }
+				if (u != null) {
+					ModelState.AddModelError("", "This username already exists.");
+					return View("NewUser", login);
+				}
 
-        [HttpPost]
-        public ActionResult NewUser(Login login)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View("NewUser", login);
-            }
-
-            using (QuotesEntity qe = new QuotesEntity()) {
-                User u = qe.Users.FirstOrDefault(usr => usr.Username == login.Username);
-
-                if (u != null) {
-                    ModelState.AddModelError("", "This username already exists.");
-                    return View("NewUser", login);
-                }
-            };
-
-            User user = new Models.User(login);
-            _context.Users.Add(user);
-            _context.SaveChanges();
-            Session["User"] = user;
-            return RedirectToAction("GetQuote", "Quotes");
-        }
-        #endregion
-    }
+				User user = new User(login);
+				qe.Users.Add(user);
+				qe.SaveChanges();
+				Session["User"] = user;
+				return RedirectToAction("GetQuote", "Quotes");
+			};
+		}
+		#endregion
+	}
 }

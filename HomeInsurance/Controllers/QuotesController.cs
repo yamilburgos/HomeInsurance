@@ -1,5 +1,4 @@
 ﻿using HomeInsurance.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -14,29 +13,25 @@ namespace HomeInsurance.Controllers {
         public ActionResult GetQuote() {
             return View();
         }
+		// Full summary of Quote/Property/Location
+		public ActionResult QuoteSummary(int? quoteId) {
+			if (!quoteId.HasValue) {
+				try {
+					quoteId = (int)Session["quoteId"];
+				}
 
-        // Full summary of Quote/Property/Location
-        public ActionResult QuoteSummary(int? quoteId)
-        {
-            if (!quoteId.HasValue)
-            {
-                try
-                {
-                    quoteId = (int)Session["quoteId"];
-                }
-                catch
-                {
-                    // TODO: redirect
-                    return RedirectToAction("GetQuote");
-                }
-            }
-            else
-            {
-                Session["quoteId"] = quoteId;
-            }
-            // TODO: do we have a User?
-            using (QuotesEntity qe = new QuotesEntity())
-            {
+				catch {
+					// TODO: redirect
+					return RedirectToAction("GetQuote");
+				}
+			}
+
+			else {
+				Session["quoteId"] = quoteId;
+			}
+
+			// TODO: do we have a User?
+			using (QuotesEntity qe = new QuotesEntity()) {
                 Quote q = qe.Quotes.Include("Property.Location.Homeowner.User").Where(qq => qq.Id == quoteId).FirstOrDefault();
                 // TODO: is q null?
                 return View(q);
@@ -46,29 +41,23 @@ namespace HomeInsurance.Controllers {
         public ActionResult QuoteDetails() {
             User user = Session["User"] as User;
             List<Quote> quotes = new List<Quote>();
-            using (QuotesEntity qe = new QuotesEntity())
-            {
-                List<Quote> allQuotes = qe.Quotes.Include("Property.Location.Homeowner.User").ToList();
-                List<Homeowner> owners = qe.HomeOwners.ToList();
-                Homeowner ho = qe.HomeOwners.FirstOrDefault(h => h.UserId == user.Id);
-                if (ho == null)
-                {
-                    // Redirect to ???
-                    return View(quotes);
-                }
-                quotes.AddRange(qe.Quotes.Where(q => q.Property.Location.HomeownerId == ho.Id));
-                return View(quotes);
-            }
-        }
 
+			using (QuotesEntity qe = new QuotesEntity()) {
+				List<Quote> allQuotes = qe.Quotes.Include("Property.Location.Homeowner.User").ToList();
+				List<Homeowner> owners = qe.HomeOwners.ToList();
+				Homeowner ho = qe.HomeOwners.FirstOrDefault(h => h.UserId == user.Id);
+
+                if (ho == null) {
+					// Redirect to ???
+					return View(quotes);
         public ActionResult QuoteForm() {
             Property property = Session["Property"] as Property;
             Quote quote = new Quote(property);
 
-            Session["Quote"] = quote;
-            // Why is this necessary?
-            return View(quote);
-        }
+			Session["Quote"] = quote;
+			// Why is this necessary?
+			return View(quote);
+		}
 
         public ActionResult BuyQuote() {
             Quote quote = Session["Quote"] as Quote;
@@ -94,12 +83,4 @@ namespace HomeInsurance.Controllers {
 
         }
 
-        // TODO: Plug this in
-        //private ActionResult ActionFor<T>(T value, string redirect)
-        //{
-        //    if (!ModelState.IsValid) return View(value);
-        //    Session[value.GetType().Name] = value;
-        //    return RedirectToAction(redirect);
-        //}
-    }
 }

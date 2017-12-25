@@ -1,4 +1,3 @@
-﻿using System;
 using System.Data.Entity;
 
 namespace HomeInsurance.Models {
