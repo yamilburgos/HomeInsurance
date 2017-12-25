@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Web.Mvc;
 
-namespace HomeInsurance.Models{
+namespace HomeInsurance.Models {
 
     public class Location {
 
@@ -43,16 +42,8 @@ namespace HomeInsurance.Models{
         [Display(Name = "Residence Use")]
         public string ResidenceUse { get; set; }
 
-        // Why is this property here?
-        public string Username { get; set; }
-
-
-        public string AddressLines
-        {
-            get
-            {
-                return String.Format("{0} {1}", AddressLine1, AddressLine2);
-            }
-        }
-    }
+		public string AddressLines {
+            get { return String.Format("{0} {1}", AddressLine1, AddressLine2); }
+		}
+	}
 }

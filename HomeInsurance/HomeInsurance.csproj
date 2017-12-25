@@ -162,10 +162,6 @@
     <Compile Include="Migrations\201712212033105_CheckingOnDatabase.Designer.cs">
       <DependentUpon>201712212033105_CheckingOnDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712221624518_testingSelectList.cs" />
-    <Compile Include="Migrations\201712221624518_testingSelectList.Designer.cs">
-      <DependentUpon>201712221624518_testingSelectList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
     <Compile Include="Models\Validations\IsAlphanumeric.cs" />
@@ -248,9 +244,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712212033105_CheckingOnDatabase.resx">
       <DependentUpon>201712212033105_CheckingOnDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712221624518_testingSelectList.resx">
-      <DependentUpon>201712221624518_testingSelectList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

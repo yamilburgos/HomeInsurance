@@ -1,11 +1,9 @@
-﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HomeInsurance.Models
-{
-    public class Property
-    {
+namespace HomeInsurance.Models {
+
+    public class Property {
         public int Id { get; set; }
 
         [ForeignKey("Location")]

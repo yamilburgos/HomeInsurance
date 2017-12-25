@@ -8,10 +8,11 @@ namespace HomeInsurance.Controllers {
             return View(new Property());
         }
 
-        [HttpPost] public ActionResult PropertyForm(Property property) {
-            if (!ModelState.IsValid) {
-                return View(property);
-            }
+		[HttpPost]
+		public ActionResult PropertyForm(Property property) {
+			if (!ModelState.IsValid) {
+				return View(property);
+			}
 
             Session["Property"] = property;
             return RedirectToAction("QuoteForm", "Quotes");
