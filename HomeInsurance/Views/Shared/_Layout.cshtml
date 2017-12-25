@@ -24,12 +24,14 @@
         </div>
     </div>
     <div class="container body-content">
-        <h1 align="center">Homeowner Insurance</h1>
-
-        @RenderBody()
+        <h1 class="shared-text">Homeowner Insurance</h1>
+        <hr />
+        <div class="body-padding">
+            @RenderBody()
+        </div>
         <hr />
         <footer>
-            <p align="center">Copyright &copy; @DateTime.Now.Year Homeownerinsurance.com All Rights Reserved</p>
+            <p class="shared-text">Copyright &copy; @DateTime.Now.Year Homeownerinsurance.com All Rights Reserved</p>
         </footer>
     </div>
 

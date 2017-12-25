@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: antiquewhite;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,11 +24,36 @@ textarea {
     max-width: 280px;
 }
 
+/* Alters the styling seen on the login page */
+.paragraph-text {
+    font-style: italic;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Alters the styling seen on the _layout page */
+.shared-text {
+    color: saddlebrown;
+    text-align: center;
+}
+
+/* Alters the border color in the shared layout */
+hr {
+    border-top: 1px solid gray;
+}
+
+/* Adjusts the padding space for the main page's content*/
+.body-padding {
+    padding: 40px 0px 40px 0px;
+}
+
+/* Set the error messages color */
 .validation-summary-errors,
 .field-validation-error {
     color: red;
 }
 
+/* Alter the field's border color & size */
 .input-validation-error {
     border: 2px solid red;
 }
