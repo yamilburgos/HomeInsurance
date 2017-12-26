@@ -2,10 +2,9 @@
 
 @{
     ViewBag.Title = "Buy Policy";
+    ViewBag.PageTitle = "Buy Policy";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Buy Policy</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -28,6 +27,7 @@
             <b>Policy start date cannot be more than 60 days from today's date.</b>
         </div>
     </div>
+
     <div class="form-group">
         @Html.LabelFor(model => model.Acknowledge, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

@@ -3,17 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Home Insurance</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
+        <h1 class="shared-text">Homeowner Insurance</h1>
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                </button>
                 @Html.ActionLink("Home Insurance", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -24,8 +22,8 @@
         </div>
     </div>
     <div class="container body-content">
-        <h1 class="shared-text">Homeowner Insurance</h1>
         <hr class="underline-border" />
+        <h3 class="shared-text">@ViewBag.PageTitle</h3>
         <div class="body-padding">
             @RenderBody()
         </div>

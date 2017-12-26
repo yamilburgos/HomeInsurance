@@ -1,20 +1,17 @@
 ﻿@model HomeInsurance.Models.Homeowner
 
 @{
-    ViewBag.Title = "HomeownerForm";
+    ViewBag.Title = "Homeowner Form";
+    ViewBag.PageTitle = "Homeowner Form";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>HomeownerForm</h2>
-
-@using (Html.BeginForm()) 
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Homeowner</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
             @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
