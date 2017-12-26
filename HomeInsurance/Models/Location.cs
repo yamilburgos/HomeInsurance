@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Web.Mvc;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HomeInsurance.Models {
 
     public class Location {
-
-        public Location() {
-            ResidenceType = "Two";
-            ResidenceTypes = new SelectList(new[] { "One", "Two" });
-        }
 
         public int Id { get; set; }
 
@@ -22,7 +17,6 @@ namespace HomeInsurance.Models {
         [Required]
         [Display(Name = "Residence Type")]
         public string ResidenceType { get; set; }
-        public SelectList ResidenceTypes { get; set; }
 
         [Required]
         [Display(Name = "Address Line 1")]
@@ -40,10 +34,26 @@ namespace HomeInsurance.Models {
         [Required]
         public string Zip { get; set; }
 
+        [Required]
         [Display(Name = "Residence Use")]
         public string ResidenceUse { get; set; }
 
-		public string AddressLines {
+        public readonly List<string> ResidenceTypes = new List<string> {
+            "Single-Family Home",
+            "Condo",
+            "Townhouse",
+            "Rowhouse",
+            "Duplex",
+            "Apartment"
+        };
+
+        public readonly List<string> ResidenceUses = new List<string> {
+            "Primary",
+            "Secondary",
+            "Rental Property"
+        };
+
+        public string AddressLines {
             get { return String.Format("{0} {1}", AddressLine1, AddressLine2); }
 		}
 	}

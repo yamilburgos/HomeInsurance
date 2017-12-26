@@ -171,6 +171,14 @@
     <Compile Include="Migrations\201712261952209_ChangedRequirements.Designer.cs">
       <DependentUpon>201712261952209_ChangedRequirements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712262017306_ChangedAgain.cs" />
+    <Compile Include="Migrations\201712262017306_ChangedAgain.Designer.cs">
+      <DependentUpon>201712262017306_ChangedAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712262033026_ChangedLocationDetails.cs" />
+    <Compile Include="Migrations\201712262033026_ChangedLocationDetails.Designer.cs">
+      <DependentUpon>201712262033026_ChangedLocationDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
     <Compile Include="Models\Validations\IsAlphanumeric.cs" />
@@ -261,6 +269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712261952209_ChangedRequirements.resx">
       <DependentUpon>201712261952209_ChangedRequirements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712262017306_ChangedAgain.resx">
+      <DependentUpon>201712262017306_ChangedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712262033026_ChangedLocationDetails.resx">
+      <DependentUpon>201712262033026_ChangedLocationDetails.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
