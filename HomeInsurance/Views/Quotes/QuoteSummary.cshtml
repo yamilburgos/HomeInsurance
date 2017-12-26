@@ -7,10 +7,10 @@
 }
 
 <div align="center">
-    @Html.ActionLink("Learn more", "QuoteTerms", "Details")
+    @Html.ActionLink("Learn more", "QuoteTerms", "Details", null, new { @class = "toplink" })</p>
 
     <h3>Monthly Premium @Model.Premium</h3>
-    @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", "", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", null, new { @class = "btn btn-primary" })
 
     <h3>Location Details</h3>
     <ul>
@@ -58,5 +58,5 @@
         <li>Deductible: @Model.Deductible</li>
     </ul>
 
-    @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", "", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", null, new { @class = "btn btn-primary" })
 </div>

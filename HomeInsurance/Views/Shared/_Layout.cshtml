@@ -10,9 +10,12 @@
 <body>
     <div class="container body-content">
         <h1 class="shared-text">Homeowner Insurance</h1>
+        <div class="container navbar-center">
             <div class="navbar-header">
-            <div class="navbar-collapse collapse">
                 @Html.ActionLink("Home", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Get Quote", "GetStarted", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Logout", "LogoutUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
             </div>
         </div>
         <hr class="underline-border" />

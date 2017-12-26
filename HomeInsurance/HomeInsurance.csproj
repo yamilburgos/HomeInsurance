@@ -159,10 +159,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712262054165_AddedPropertyRequirements.cs" />
-    <Compile Include="Migrations\201712262054165_AddedPropertyRequirements.Designer.cs">
-      <DependentUpon>201712262054165_AddedPropertyRequirements.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
     <Compile Include="Models\Validations\IsAlphanumeric.cs" />
@@ -217,8 +213,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Quotes\GetQuote.cshtml" />
-    <Content Include="Views\Quotes\QuoteForm.cshtml" />
+    <Content Include="Views\Quotes\GetStarted.cshtml" />
+    <Content Include="Views\Quotes\CoverageDetails.cshtml" />
     <Content Include="Views\Quotes\QuoteSummary.cshtml" />
     <Content Include="Views\Quotes\QuoteDetails.cshtml" />
     <Content Include="Views\Details\PolicyTerms.cshtml" />
@@ -230,6 +226,7 @@
     <Content Include="Views\Location\LocationForm.cshtml" />
     <Content Include="Views\Policy\BuyPolicy.cshtml" />
     <Content Include="Views\Admin\SearchUser.cshtml" />
+    <Content Include="Views\Welcome\LogoutUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -243,11 +240,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712262054165_AddedPropertyRequirements.resx">
-      <DependentUpon>201712262054165_AddedPropertyRequirements.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

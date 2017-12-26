@@ -7,10 +7,7 @@ namespace HomeInsurance.Controllers {
 
     public class QuotesController : Controller {
 
-        public static IEnumerable<string> ResidenceTypes = new string[] 
-            { "Primary Residence", "Secondary Residency", "Shack" };
-
-        public ActionResult GetQuote() {
+        public ActionResult GetStarted() {
             return View();
         }
 
@@ -23,7 +20,7 @@ namespace HomeInsurance.Controllers {
 
 				catch {
 					// TODO: redirect
-					return RedirectToAction("GetQuote");
+					return RedirectToAction("GetStarted", "Quotes");
 				}
 			}
 
@@ -58,7 +55,7 @@ namespace HomeInsurance.Controllers {
 			}
 		}
 
-        public ActionResult QuoteForm() {
+        public ActionResult CoverageDetails() {
             Property property = Session["Property"] as Property;
             Quote quote = new Quote(property);
 

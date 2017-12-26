@@ -5,8 +5,14 @@ using System.Web.Mvc;
 namespace HomeInsurance.Controllers {
 
 	public class WelcomeController : Controller {
-		#region LoginUser
-		public ActionResult LoginUser() {
+        #region LogoutUser
+        public ActionResult LogoutUser() {
+            return View();
+        }
+        #endregion
+
+        #region LoginUser
+        public ActionResult LoginUser() {
 			return View();
 		}
 
@@ -30,7 +36,7 @@ namespace HomeInsurance.Controllers {
                 if (existing.IsAdmin)
                     return RedirectToAction("SearchUser", "Admin");
                 else
-				    return RedirectToAction("GetQuote", "Quotes");
+				    return RedirectToAction("GetStarted", "Quotes");
 			}
 		}
 		#endregion
@@ -58,7 +64,7 @@ namespace HomeInsurance.Controllers {
 				qe.Users.Add(user);
 				qe.SaveChanges();
 				Session["User"] = user;
-				return RedirectToAction("GetQuote", "Quotes");
+				return RedirectToAction("GetStarted", "Quotes");
 			};
 		}
 		#endregion

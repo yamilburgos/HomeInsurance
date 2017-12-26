@@ -15,7 +15,7 @@ namespace HomeInsurance.Controllers {
 			}
 
 			catch {
-				return RedirectToAction("GetQuote", "Quotes");
+				return RedirectToAction("GetStarted", "Quotes");
 			}
 
 			using (QuotesEntity qe = new QuotesEntity()) {
@@ -33,7 +33,7 @@ namespace HomeInsurance.Controllers {
 			}
 
 			catch {
-				return RedirectToAction("GetQuote", "Quotes");
+				return RedirectToAction("GetStarted", "Quotes");
 			}
 
 			return View(vp);

@@ -15,7 +15,7 @@ namespace HomeInsurance.Controllers {
 			}
 
             Session["Property"] = property;
-            return RedirectToAction("QuoteForm", "Quotes");
+            return RedirectToAction("CoverageDetails", "Quotes");
         }
     }
 }
