@@ -7,13 +7,13 @@ namespace HomeInsurance.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ChangedAgain : IMigrationMetadata
+    public sealed partial class AddedPropertyRequirements : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedAgain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedPropertyRequirements));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712262017306_ChangedAgain"; }
+            get { return "201712262054165_AddedPropertyRequirements"; }
         }
         
         string IMigrationMetadata.Source

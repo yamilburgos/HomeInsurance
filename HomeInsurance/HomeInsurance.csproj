@@ -159,25 +159,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712212033105_CheckingOnDatabase.cs" />
-    <Compile Include="Migrations\201712212033105_CheckingOnDatabase.Designer.cs">
-      <DependentUpon>201712212033105_CheckingOnDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712252004234_NewChanges.cs" />
-    <Compile Include="Migrations\201712252004234_NewChanges.Designer.cs">
-      <DependentUpon>201712252004234_NewChanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712261952209_ChangedRequirements.cs" />
-    <Compile Include="Migrations\201712261952209_ChangedRequirements.Designer.cs">
-      <DependentUpon>201712261952209_ChangedRequirements.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712262017306_ChangedAgain.cs" />
-    <Compile Include="Migrations\201712262017306_ChangedAgain.Designer.cs">
-      <DependentUpon>201712262017306_ChangedAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712262033026_ChangedLocationDetails.cs" />
-    <Compile Include="Migrations\201712262033026_ChangedLocationDetails.Designer.cs">
-      <DependentUpon>201712262033026_ChangedLocationDetails.cs</DependentUpon>
+    <Compile Include="Migrations\201712262054165_AddedPropertyRequirements.cs" />
+    <Compile Include="Migrations\201712262054165_AddedPropertyRequirements.Designer.cs">
+      <DependentUpon>201712262054165_AddedPropertyRequirements.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
@@ -261,23 +245,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712212033105_CheckingOnDatabase.resx">
-      <DependentUpon>201712212033105_CheckingOnDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712252004234_NewChanges.resx">
-      <DependentUpon>201712252004234_NewChanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712261952209_ChangedRequirements.resx">
-      <DependentUpon>201712261952209_ChangedRequirements.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712262017306_ChangedAgain.resx">
-      <DependentUpon>201712262017306_ChangedAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712262033026_ChangedLocationDetails.resx">
-      <DependentUpon>201712262033026_ChangedLocationDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712262054165_AddedPropertyRequirements.resx">
+      <DependentUpon>201712262054165_AddedPropertyRequirements.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
