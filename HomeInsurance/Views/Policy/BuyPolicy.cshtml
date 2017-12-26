@@ -7,13 +7,12 @@
 
 <h2>Buy Policy</h2>
 
-@using (Html.BeginForm()) 
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
     <div class="form-group">
         @Html.LabelFor(model => model.QuoteId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -26,7 +25,7 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.PolicyStartDate, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.PolicyStartDate, "", new { @class = "text-danger" })
-            <span>Policy start date cannot be more than 60 days from today's date</span>
+            <b>Policy start date cannot be more than 60 days from today's date.</b>
         </div>
     </div>
     <div class="form-group">

@@ -38,13 +38,20 @@ textarea {
 }
 
 /* Alters the border color in the shared layout */
-hr {
+.underline-border {
     border-top: 1px solid gray;
 }
 
-/* Adjusts the padding space for the main page's content*/
+/* Aligns the image correctly onscreen */
+.center-image {
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+/* Adjusts the padding space for the main page's content */
 .body-padding {
-    padding: 40px 0px 40px 0px;
+    padding: 40px 40px;
 }
 
 /* Set the error messages color */
