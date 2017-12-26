@@ -8,20 +8,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="container body-content">
         <h1 class="shared-text">Homeowner Insurance</h1>
             <div class="navbar-header">
-                @Html.ActionLink("Home Insurance", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Sign Up", "NewUser", "Welcome")</li>
-                </ul>
+                @Html.ActionLink("Home", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
             </div>
         </div>
-    </div>
-    <div class="container body-content">
         <hr class="underline-border" />
         <h3 class="shared-text">@ViewBag.PageTitle</h3>
         <div class="body-padding">

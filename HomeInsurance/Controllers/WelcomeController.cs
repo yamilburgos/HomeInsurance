@@ -16,8 +16,9 @@ namespace HomeInsurance.Controllers {
 				return View("LoginUser");
 			}
 
-			using(QuotesEntity qe = new QuotesEntity()) {
-				User existing = qe.Users.FirstOrDefault(u => u.Password == user.Password && u.Username == user.Username);
+			using (QuotesEntity qe = new QuotesEntity()) {
+				User existing = qe.Users.FirstOrDefault(u => u.Password == user.Password 
+                    && u.Username == user.Username);
 
 				if (existing == null) {
 					ModelState.AddModelError("", "The user name or password provided is incorrect.");
@@ -25,7 +26,11 @@ namespace HomeInsurance.Controllers {
 				}
 
 				Session["User"] = existing;
-				return RedirectToAction("GetQuote", "Quotes");
+
+                if (existing.IsAdmin)
+                    return RedirectToAction("SearchUser", "Admin");
+                else
+				    return RedirectToAction("GetQuote", "Quotes");
 			}
 		}
 		#endregion

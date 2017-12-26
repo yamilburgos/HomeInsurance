@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeownerController.cs" />
     <Compile Include="Controllers\PolicyController.cs" />
@@ -165,6 +166,10 @@
     <Compile Include="Migrations\201712252004234_NewChanges.cs" />
     <Compile Include="Migrations\201712252004234_NewChanges.Designer.cs">
       <DependentUpon>201712252004234_NewChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712261952209_ChangedRequirements.cs" />
+    <Compile Include="Migrations\201712261952209_ChangedRequirements.Designer.cs">
+      <DependentUpon>201712261952209_ChangedRequirements.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
@@ -232,6 +237,7 @@
     <Content Include="Views\Homeowner\HomeownerForm.cshtml" />
     <Content Include="Views\Location\LocationForm.cshtml" />
     <Content Include="Views\Policy\BuyPolicy.cshtml" />
+    <Content Include="Views\Admin\SearchUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712252004234_NewChanges.resx">
       <DependentUpon>201712252004234_NewChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712261952209_ChangedRequirements.resx">
+      <DependentUpon>201712261952209_ChangedRequirements.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
