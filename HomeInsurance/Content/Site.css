@@ -61,6 +61,12 @@ textarea {
     justify-content: center;
 }
 
+/* Some styling when hovering over a nav bar option */
+.navbar-brand:hover {
+    font-style: italic;
+    color: black;
+}
+
 /* Alters elements using columns to be properly aligned */
 .row {
     display: flex;

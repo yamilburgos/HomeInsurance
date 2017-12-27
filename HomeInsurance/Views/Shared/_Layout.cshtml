@@ -12,10 +12,12 @@
         <h1 class="shared-text">Homeowner Insurance</h1>
         <nav class='navbar navbar-default'>
             <div class='container-fluid container'>
-                @Html.ActionLink("Home", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Get Quote", "GetStarted", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Logout", "LogoutUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
+                @if (Session["User"] != null) {
+                    @Html.ActionLink("Home", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Get Quote", "GetStarted", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Logout", "LogoutUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
+                }
             </div>
         </nav>
         <hr class="underline-border" />

@@ -15,12 +15,12 @@ namespace HomeInsurance.Models {
         public int Id { get; set; }
 
         [Required]
-        [IsLengthBelow(20)]
+        [IsStringLengthBelow(20)]
         [IsAlphanumeric]
         public string Username { get; set; }
 
         [Required]
-        [IsLengthBelow(20)]
+        [IsStringLengthBelow(20)]
         [IsAlphanumeric]
         public string Password { get; set; }
 

@@ -7,17 +7,17 @@ namespace HomeInsurance.Models {
     public class Login {
 
         [Required]
-        [IsLengthBelow(20)]
+        [IsStringLengthBelow(20)]
         [IsAlphanumeric]
         public string Username { get; set; }
 
         [Required]
-        [IsLengthBelow(20)]
+        [IsStringLengthBelow(20)]
         [IsAlphanumeric]
         public string Password { get; set; }
 
         [Required]
-        [IsLengthBelow(20)]
+        [IsStringLengthBelow(20)]
         [IsAlphanumeric]
         [IsPasswordSame]
         [Display(Name = "Re-Enter Password")]

@@ -2,9 +2,9 @@
 
 namespace HomeInsurance.Models {
 
-    public class IsLengthBelow : StringLengthAttribute {
+    public class IsStringLengthBelow : StringLengthAttribute {
 
-        public IsLengthBelow(int length) : base(length) {
+        public IsStringLengthBelow(int length) : base(length) {
             ErrorMessage = "{0} length should not be more than {1}.";
         }
     }

@@ -19,20 +19,27 @@ namespace HomeInsurance.Models {
         public string ResidenceType { get; set; }
 
         [Required]
+        [IsStringLengthBelow(50)]
         [Display(Name = "Address Line 1")]
         public string AddressLine1 { get; set; }
 
+        [IsStringLengthBelow(100)]
         [Display(Name = "Address Line 2")]
         public string AddressLine2 { get; set; }
 
         [Required]
+        [IsStringLengthBelow(15)]
+        [IsAlphanumeric]
         public string City { get; set; }
 
         [Required]
+        [IsStringLengthBelow(15)]
+        [IsAlphanumeric]
         public string State { get; set; }
 
         [Required]
-        public string Zip { get; set; }
+        [IsZipBelowTenDigits]
+        public int? Zip { get; set; }
 
         [Required]
         [Display(Name = "Residence Use")]

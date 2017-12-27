@@ -11,17 +11,17 @@ namespace HomeInsurance.Models {
 		public int UserId { get; set; }
 
 		[Required]
-		[IsLengthBelow(30)]
+		[IsStringLengthBelow(30)]
 		[Display(Name = "First Name")]
 		public string FirstName { get; set; }
 
 		[Required]
-		[IsLengthBelow(30)]
+		[IsStringLengthBelow(30)]
 		[Display(Name = "Last Name")]
 		public string LastName { get; set; }
 
 		[Required]
-		[IsLengthBelow(10)]
+		[IsStringLengthBelow(10)]
 		[Display(Name = "Date of Birth")]
 		public string DOB { get; set; }
 
@@ -30,12 +30,12 @@ namespace HomeInsurance.Models {
 		public bool IsRetired { get; set; }
 
 		[Required]
-		[IsLengthBelow(9)]
+		[IsStringLengthBelow(9)]
 		[Display(Name = "Social Security Number")]
 		public string SSN { get; set; }
 
 		[Required]
-        [IsLengthBelow(50)]
+        [IsStringLengthBelow(50)]
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
