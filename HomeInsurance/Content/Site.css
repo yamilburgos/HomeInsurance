@@ -49,6 +49,24 @@ textarea {
     padding-bottom: 20px;
 }
 
+/* Gets rid of some additions made by navbar-default */
+.navbar-default {
+    background-color: inherit;
+    border: 0px;
+}
+
+/* Centers the nav bar */
+.navbar-default > .container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+/* Alters elements using columns to be properly aligned */
+.row {
+    display: flex;
+    align-items: center;
+}
+
 /* Adjusts the padding space for the main page's content */
 .body-padding {
     padding: 40px 40px;

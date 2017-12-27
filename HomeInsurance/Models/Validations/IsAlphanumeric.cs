@@ -13,7 +13,7 @@ namespace HomeInsurance.Models {
             Regex regexCheck = new Regex("^[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*$");
 
             if (!regexCheck.IsMatch(stringValue))
-                return new ValidationResult("Only Alphabets and Numbers allowed.");
+                return new ValidationResult("Alphabets and Numbers only.");
 
             return ValidationResult.Success;
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace HomeInsurance.Models {
 
@@ -15,10 +14,14 @@ namespace HomeInsurance.Models {
 
         public int Id { get; set; }
 
-        [Required] [StringLength(20)] [IsAlphanumeric]
+        [Required]
+        [IsLengthBelow(20)]
+        [IsAlphanumeric]
         public string Username { get; set; }
 
-        [Required] [StringLength(20)] [IsAlphanumeric]
+        [Required]
+        [IsLengthBelow(20)]
+        [IsAlphanumeric]
         public string Password { get; set; }
 
         public bool IsAdmin { get; set; }

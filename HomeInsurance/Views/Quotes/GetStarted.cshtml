@@ -4,7 +4,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Get an online quote</h2>
-
-@Html.ActionLink("Get a Quote", "HomeownerForm", "Homeowner", "", new { @class = "btn btn-primary" })
-@Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", null, new { @class = "btn btn-default" })
+<div class="row">
+    <div class="col-md-5">
+        <img class="center-image" src="~/Content/images/2ndHomeImg.jpg" />
+    </div>
+    <div class="col-md-5">
+        @Html.ActionLink("Get a Quote", "HomeownerForm", "Homeowner", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", null, new { @class = "btn btn-default" })
+    </div>
+</div>
