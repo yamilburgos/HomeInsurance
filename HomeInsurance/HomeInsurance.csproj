@@ -161,8 +161,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
+    <Compile Include="Models\Validations\IsNumeric.cs" />
+    <Compile Include="Models\Validations\IsAddressLineTwo.cs" />
     <Compile Include="Models\Validations\IsAlphanumeric.cs" />
-    <Compile Include="Models\Validations\IsLength.cs" />
+    <Compile Include="Models\Validations\IsStringLengthBelow.cs" />
     <Compile Include="Models\Validations\IsPasswordSame.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Login.cs" />
@@ -175,10 +177,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\HomeInsurance.Models.QuotesEntity.mdf" />
-    <Content Include="App_Data\HomeInsurance.Models.QuotesEntity_log.ldf">
-      <DependentUpon>HomeInsurance.Models.QuotesEntity.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\2ndHomeImg.jpg" />
@@ -242,6 +240,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

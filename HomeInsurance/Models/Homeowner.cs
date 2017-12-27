@@ -12,12 +12,14 @@ namespace HomeInsurance.Models {
 
 		[Required]
 		[IsStringLengthBelow(30)]
+        [IsAlphanumeric]
 		[Display(Name = "First Name")]
 		public string FirstName { get; set; }
 
 		[Required]
 		[IsStringLengthBelow(30)]
-		[Display(Name = "Last Name")]
+        [IsAlphanumeric]
+        [Display(Name = "Last Name")]
 		public string LastName { get; set; }
 
 		[Required]
@@ -30,8 +32,9 @@ namespace HomeInsurance.Models {
 		public bool IsRetired { get; set; }
 
 		[Required]
-		[IsStringLengthBelow(9)]
-		[Display(Name = "Social Security Number")]
+        [IsStringLengthBelow(9, MinimumLength = 9, ErrorMessage = "Your SSN must be 9 numbers")]
+        [IsNumeric]
+        [Display(Name = "Social Security Number")]
 		public string SSN { get; set; }
 
 		[Required]

@@ -20,10 +20,12 @@ namespace HomeInsurance.Models {
 
         [Required]
         [IsStringLengthBelow(50)]
+        [IsAlphanumeric]
         [Display(Name = "Address Line 1")]
         public string AddressLine1 { get; set; }
 
         [IsStringLengthBelow(100)]
+        [IsAddressLineTwo]
         [Display(Name = "Address Line 2")]
         public string AddressLine2 { get; set; }
 
@@ -38,8 +40,9 @@ namespace HomeInsurance.Models {
         public string State { get; set; }
 
         [Required]
-        [IsZipBelowTenDigits]
-        public int? Zip { get; set; }
+        [IsStringLengthBelow(10)]
+        [IsNumeric]
+        public string Zip { get; set; }
 
         [Required]
         [Display(Name = "Residence Use")]
