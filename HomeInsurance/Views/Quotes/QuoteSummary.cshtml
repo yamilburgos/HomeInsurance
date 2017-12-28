@@ -13,13 +13,15 @@
     @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", null, new { @class = "btn btn-primary" })
 </div>
 
+<div class="row">
+    <div class="col-md-5">
     <div class="form-horizontal">
         <h3 align="center">Location Details</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.ResidenceType,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.ResidenceType,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -27,8 +29,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.AddressLines,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.AddressLines,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -36,8 +38,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.City,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.City,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -45,8 +47,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.State,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.State,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -54,8 +56,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Zip,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Zip,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -63,21 +65,23 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.ResidenceUse,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.ResidenceUse,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
         </div>
     </div>
+    </div>
     
+    <div class="col-md-5">
     <div class="form-horizontal">
-        <h3>Homeowner Details</h3>
+        <h3 align="center">Homeowner Details</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Homeowner.FirstName,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Homeowner.FirstName,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -85,8 +89,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Homeowner.LastName,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Homeowner.LastName,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -94,8 +98,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Homeowner.DOB,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Homeowner.DOB,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -103,8 +107,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Homeowner.IsRetired,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Homeowner.IsRetired,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -112,8 +116,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Homeowner.SSN,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Homeowner.SSN,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -121,21 +125,25 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.Location.Homeowner.EmailAddress,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.Location.Homeowner.EmailAddress,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
         </div>
     </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-md-5">
     <div class="form-horizontal">
-        <h3>Property Details</h3>
+        <h3 align="center">Property Details</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.MarketValue,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.MarketValue, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -144,8 +152,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.YearBuilt,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.YearBuilt,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -153,8 +161,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.SquareFootage,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.SquareFootage,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -162,8 +170,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.DwellingStyle,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.DwellingStyle,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -171,8 +179,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.RoofMaterial,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.RoofMaterial,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -180,8 +188,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.GarageType,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.GarageType,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -189,8 +197,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.NumFullBaths,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.NumFullBaths,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -198,8 +206,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.NumHalfBaths,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.NumHalfBaths,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
@@ -207,21 +215,23 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property.HasSwimmingPool,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Property.HasSwimmingPool,
                     new { @class = "form-control", @readonly = "readonly" })
             </div>
         </div>
     </div>
+    </div>
 
+    <div class="col-md-5">
     <div class="form-horizontal">
-        <h3>Coverage Details</h3>
+        <h3 align="center">Coverage Details</h3>
 
         <div class="form-group">
             @Html.LabelFor(model => model.MonthlyPremium,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.MonthlyPremium, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -230,8 +240,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.DwellingCoverage,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.DwellingCoverage, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -240,8 +250,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.DetachedStructure,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.DetachedStructure, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -250,8 +260,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.PersonalProperty,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.PersonalProperty, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -260,8 +270,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.AddnlLivgExpense,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.AddnlLivgExpense, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -270,8 +280,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.MedicalExpense,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.MedicalExpense, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
@@ -280,14 +290,17 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Deductible,
-                htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
                 @Html.TextBoxFor(model => model.Deductible, "{0:c}",
                     new { @class = "form-control required numeric",
                     id = "CurrentBalance", @readonly = "readonly" })
             </div>
         </div>
     </div>
+    </div>
+</div>
 
+<div align="center">
     @Html.ActionLink("Buy Policy", "BuyPolicy", "Policy", null, new { @class = "btn btn-primary" })
 </div>

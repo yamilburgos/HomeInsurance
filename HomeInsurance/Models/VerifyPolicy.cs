@@ -10,6 +10,7 @@ namespace HomeInsurance.Models {
         [Display(Name = "Quote Id")]
         public int QuoteId { get; set; }
 
+        [IsDateFormatted]
         [Display(Name = "Enter Policy Start Date")]
         public string PolicyStartDate { get; set; }
 

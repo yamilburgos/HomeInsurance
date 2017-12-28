@@ -26,7 +26,7 @@ namespace HomeInsurance.Controllers {
 
 		public ActionResult BuyPolicy()	{
 			VerifyPolicy vp = new VerifyPolicy();
-			vp.PolicyStartDate = DateTime.Now.ToString("MM/dd/yyyy");
+			vp.PolicyStartDate = DateTime.Now.ToString("yyyy-MM-dd");
 
             try	{
 				vp.QuoteId = (int)Session["quoteId"];
@@ -56,8 +56,8 @@ namespace HomeInsurance.Controllers {
 			}
 
 			Policy p = new Policy();
-			p.PolicyEffDate = startDate.ToString("MM/dd/yyyy");
-			p.PolicyEndDate = startDate.AddYears(1).ToString("MM/dd/yyyy");
+			p.PolicyEffDate = startDate.ToString("yyyy-MM-dd");
+			p.PolicyEndDate = startDate.AddYears(1).ToString("yyyy-MM-dd");
 			p.QuoteId = (int)Session["quoteId"];
 			p.PolicyKey = p.QuoteId.ToString() + "_1";
 			p.PolicyStatus = startDate <= DateTime.Now ? "ACTIVE" : "PENDING";
