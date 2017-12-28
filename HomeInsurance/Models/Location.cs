@@ -63,6 +63,7 @@ namespace HomeInsurance.Models {
             "Rental Property"
         };
 
+        [Display(Name = "Address")]
         public string AddressLines {
             get { return String.Format("{0} {1}", AddressLine1, AddressLine2); }
 		}

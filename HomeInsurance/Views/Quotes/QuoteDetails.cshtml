@@ -6,33 +6,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Property.Location.ResidenceType)
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Property.Location.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Property.Location.State)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Property.Location.Zip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Property.Location.ResidenceUse)
-        </th>
-        <th>
-            Rest of Information
-        </th>
-    </tr>
+<table class="table table-bordered table-hover">
+    <thead class="colored-tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.Location.ResidenceType)
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.Location.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.Location.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.Location.Zip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.Location.ResidenceUse)
+            </th>
+            <th>
+                Rest of Information
+            </th>
+        </tr>
+    </thead>
 
 @foreach (var item in Model) {
     <tr>

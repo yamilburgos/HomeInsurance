@@ -52,7 +52,7 @@ textarea {
 /* Gets rid of some additions made by navbar-default */
 .navbar-default {
     background-color: inherit;
-    border: 0px;
+    border: 0;
 }
 
 /* Centers the nav bar */
@@ -71,6 +71,17 @@ textarea {
 .row {
     display: flex;
     align-items: center;
+}
+
+/* Provides some coloring to the table's head */
+.colored-tablehead {
+    background-color: brown;
+    color: white;
+}
+
+/* Changes the color of the table's data rows */
+tr > td {
+    background-color: beige;
 }
 
 /* Adjusts the padding space for the main page's content */
