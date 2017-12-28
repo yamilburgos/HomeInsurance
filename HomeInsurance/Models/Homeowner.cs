@@ -24,6 +24,7 @@ namespace HomeInsurance.Models {
 
 		[Required]
 		[IsStringLengthBelow(10)]
+        [IsDateFormatted]
 		[Display(Name = "Date of Birth")]
 		public string DOB { get; set; }
 
@@ -39,6 +40,7 @@ namespace HomeInsurance.Models {
 
 		[Required]
         [IsStringLengthBelow(50)]
+        [EmailAddress]
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 

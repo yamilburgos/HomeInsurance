@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
+    <Compile Include="Models\Validations\IsDateFormatted.cs" />
     <Compile Include="Models\Validations\IsNumeric.cs" />
     <Compile Include="Models\Validations\IsAddressLineTwo.cs" />
     <Compile Include="Models\Validations\IsAlphanumeric.cs" />

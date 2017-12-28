@@ -5,11 +5,12 @@ namespace HomeInsurance.Models {
 
     public class IsNumeric : ValidationAttribute {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
-            string stringValue = (value as string).Trim();
+            string stringValue = value as string;
 
             if (string.IsNullOrWhiteSpace(stringValue))
                 return new ValidationResult("This field cannot be empty.");
 
+            stringValue.Trim();
             Regex regexCheck = new Regex("^[0-9_]+( [0-9_]+)*$");
 
             if (!regexCheck.IsMatch(stringValue))
