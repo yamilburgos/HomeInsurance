@@ -159,6 +159,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712281735282_RenamedPremium.cs" />
+    <Compile Include="Migrations\201712281735282_RenamedPremium.Designer.cs">
+      <DependentUpon>201712281735282_RenamedPremium.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
     <Compile Include="Models\Validations\IsDateFormatted.cs" />
@@ -178,6 +182,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HomeInsurance.Models.QuotesEntity.mdf" />
+    <Content Include="App_Data\HomeInsurance.Models.QuotesEntity_log.ldf">
+      <DependentUpon>HomeInsurance.Models.QuotesEntity.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\2ndHomeImg.jpg" />
@@ -242,8 +250,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201712281735282_RenamedPremium.resx">
+      <DependentUpon>201712281735282_RenamedPremium.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -27,6 +27,9 @@
             @Html.DisplayNameFor(model => model.Property.Location.Zip)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Property.Location.ResidenceUse)
+        </th>
+        <th>
             Rest of Information
         </th>
     </tr>
@@ -50,6 +53,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Property.Location.Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.Location.ResidenceUse)
         </td>
         <td>
             @Html.ActionLink("Click", "QuoteSummary", new { quoteId = item.Id })

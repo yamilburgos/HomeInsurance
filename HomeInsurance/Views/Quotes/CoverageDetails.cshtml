@@ -6,18 +6,69 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Coverage Details</h2>
+@Html.ActionLink("Learn more", "QuoteTerms", "Details", null, new { @class = "toplink" })
+@Html.AntiForgeryToken()
 
-@Html.ActionLink("Learn more", "QuoteTerms", "Details")
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(model => model.MonthlyPremium, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.MonthlyPremium, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
 
-<ul>
-    <li>Monthly Premium: @Model.Premium</li>
-    <li>Dwelling Coverage: @Model.DwellingCoverage</li>
-    <li>Detached Structures: @Model.DetachedStructure</li>
-    <li>Personal Property: @Model.PersonalProperty</li>
-    <li>Additional living expense: @Model.AddnlLivgExpense</li>
-    <li>Medical Expense: @Model.MedicalExpense</li>
-    <li>Deductible: @Model.Deductible</li>
-</ul>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DwellingCoverage, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.DwellingCoverage, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
 
-@Html.ActionLink("Save Quote", "SaveQuote", null, new { @class = "btn btn-primary" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.DetachedStructure, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.DetachedStructure, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PersonalProperty, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.PersonalProperty, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AddnlLivgExpense, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.AddnlLivgExpense, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MedicalExpense, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.MedicalExpense, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Deductible, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Deductible, "{0:c}", new { @class = "form-control required numeric",
+                id = "CurrentBalance", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ActionLink("Save Quote", "SaveQuote", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>

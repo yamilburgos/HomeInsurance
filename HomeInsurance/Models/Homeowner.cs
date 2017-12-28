@@ -33,7 +33,7 @@ namespace HomeInsurance.Models {
 		public bool IsRetired { get; set; }
 
 		[Required]
-        [IsStringLengthBelow(9, MinimumLength = 9, ErrorMessage = "Your SSN must be 9 numbers")]
+        [IsStringLengthBelow(9, MinimumLength = 9, ErrorMessage = "Your SSN must be 9 numbers.")]
         [IsNumeric]
         [Display(Name = "Social Security Number")]
 		public string SSN { get; set; }

@@ -14,6 +14,7 @@ namespace HomeInsurance.Controllers {
 				return View(property);
 			}
 
+            property.Location = Session["Location"] as Location;
             Session["Property"] = property;
             return RedirectToAction("CoverageDetails", "Quotes");
         }
