@@ -1,0 +1,67 @@
+﻿@model IEnumerable<HomeInsurance.Models.Policy>
+
+@{
+    ViewBag.Title = "User Policies";
+    ViewBag.PageTitle = "User Policies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered table-hover">
+    <thead class="colored-tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuoteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyEffDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyTerm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyStatus)
+            </th>
+            <th>
+                Renew Policy
+            </th>
+            <th>
+                Cancel Policy
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyEffDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyTerm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Renew", "RenewPolicy", new { policyId = item.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Cancel", "CancelPolicy", new { policyId = item.Id })
+            </td>
+        </tr>
+    }
+</table>

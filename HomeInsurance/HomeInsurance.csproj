@@ -159,10 +159,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712281735282_RenamedPremium.cs" />
-    <Compile Include="Migrations\201712281735282_RenamedPremium.Designer.cs">
-      <DependentUpon>201712281735282_RenamedPremium.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Homeowner.cs" />
     <Compile Include="Models\Validations\IsDateFormatted.cs" />
@@ -172,7 +168,7 @@
     <Compile Include="Models\Validations\IsStringLengthBelow.cs" />
     <Compile Include="Models\Validations\IsPasswordSame.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\NewUser.cs" />
     <Compile Include="Models\Policy.cs" />
     <Compile Include="Models\Property.cs" />
     <Compile Include="Models\Quote.cs" />
@@ -238,6 +234,7 @@
     <Content Include="Views\Welcome\LogoutUser.cshtml" />
     <Content Include="Views\Shared\NavBar.cshtml" />
     <Content Include="Views\Policy\MyPolicies.cshtml" />
+    <Content Include="Views\Admin\UserPolicies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -253,11 +250,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712281735282_RenamedPremium.resx">
-      <DependentUpon>201712281735282_RenamedPremium.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

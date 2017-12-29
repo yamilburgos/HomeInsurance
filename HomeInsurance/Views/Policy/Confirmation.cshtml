@@ -6,7 +6,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<b>Our customer service representative will contact you shortly for premium collection arrangements.</b>
+@if (Model.PolicyTerm == 0) {
+    <b>Policy Cancelled Successfully.</b>
+}
+
+@if (Model.PolicyTerm == 1) {
+    <b>Our customer service representative will contact you shortly for premium collection arrangements.</b>
+}
+
+@if (Model.PolicyTerm == 2) {
+    <b>Policy Renewed Successfully.</b>
+}        
+
 <ul>
     <li>Quote Id: </li>
     <li>Policy Key: @Model.PolicyKey</li>

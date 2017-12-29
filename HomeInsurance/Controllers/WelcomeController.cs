@@ -7,6 +7,7 @@ namespace HomeInsurance.Controllers {
 	public class WelcomeController : Controller {
         #region LogoutUser
         public ActionResult LogoutUser() {
+            Session.Clear();
             return View();
         }
         #endregion

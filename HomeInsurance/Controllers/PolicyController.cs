@@ -76,7 +76,7 @@ namespace HomeInsurance.Controllers {
 			    PolicyTerm = 1
             };
 
-			using (QuotesEntity qe = new QuotesEntity()) {
+            using (QuotesEntity qe = new QuotesEntity()) {
 				qe.Policies.Add(p);
 				qe.SaveChanges();
 			}

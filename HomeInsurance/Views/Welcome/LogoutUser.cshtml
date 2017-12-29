@@ -5,8 +5,5 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>Thanks for Visiting Us !!! You have been logged out.</p>
-
-<p>Want to login again? Click below</p>
-
-<p>Login button</p>
+<h2>Thanks for visiting, You have been logged out.</h2>
+@Html.ActionLink("Login", "LoginUser", "Welcome", null, new { @class = "btn btn-primary" })
