@@ -38,24 +38,24 @@ namespace HomeInsurance.Controllers {
 
 		#region NewUser
 		public ActionResult NewUser() {
-			return View("NewUser", new Login());
+			return View("NewUser", new NewUser());
 		}
 
 		[HttpPost]
-		public ActionResult NewUser(Login login) {
+		public ActionResult NewUser(NewUser newUser) {
 			if (!ModelState.IsValid) {
-				return View("NewUser", login);
+				return View("NewUser", newUser);
 			}
 
 			using (QuotesEntity qe = new QuotesEntity()) {
-				User u = qe.Users.FirstOrDefault(usr => usr.Username == login.Username);
+				User u = qe.Users.FirstOrDefault(model => model.Username == newUser.Username);
 
 				if (u != null) {
 					ModelState.AddModelError("", "This username already exists.");
-					return View("NewUser", login);
+					return View("NewUser", newUser);
 				}
 
-				User user = new User(login);
+				User user = new User(newUser);
 				qe.Users.Add(user);
 				qe.SaveChanges();
                 return RedirectUser(user);

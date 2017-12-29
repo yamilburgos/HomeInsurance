@@ -1,0 +1,55 @@
+﻿@model IEnumerable<HomeInsurance.Models.Policy>
+
+@{
+    ViewBag.Title = "My Policies";
+    ViewBag.PageTitle = "My Policies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered table-hover">
+    <thead class="colored-tablehead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuoteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyEffDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyTerm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyStatus)
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyEffDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyTerm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyStatus)
+            </td>
+        </tr>
+    }
+</table>

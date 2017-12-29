@@ -4,6 +4,7 @@
             @if (Session["Admin"] == null) {
                 @Html.ActionLink("Get Quote", "GetStarted", "Quotes", new { area = "" }, new { @class = "navbar-brand" })        
                 @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("My Policies", "MyPolicies", "Policy", new { area = "" }, new { @class = "navbar-brand" })
             }
 
             @if (Session["Admin"] != null) {

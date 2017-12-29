@@ -6,7 +6,7 @@ namespace HomeInsurance.Models {
 
         public User() { }
 
-        public User(Login basedOn) {
+        public User(NewUser basedOn) {
             Username = basedOn.Username;
             Password = basedOn.Password;
             IsAdmin = false;

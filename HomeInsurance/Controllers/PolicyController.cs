@@ -1,4 +1,5 @@
 ﻿using HomeInsurance.Models;
+using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -7,7 +8,22 @@ namespace HomeInsurance.Controllers {
 
 	public class PolicyController : Controller {
 
-		public ActionResult Confirmation() {
+        public ActionResult MyPolicies() {
+            User user = Session["User"] as User;
+            List<Policy> policyList = new List<Policy>();
+
+            using (QuotesEntity qe = new QuotesEntity()) {
+                List<Policy> allPolicy = qe.Policies.Include("Quote.Property.Location.Homeowner.User").ToList();
+
+                Homeowner ho = qe.HomeOwners.FirstOrDefault(h => h.UserId == user.Id);
+                if (ho == null) return View(policyList);
+                
+                policyList.AddRange(qe.Policies.Where(p => p.Quote.Property.Location.HomeownerId == ho.Id));
+                return View(policyList);
+            }
+        }
+
+        public ActionResult Confirmation() {
 			int policyId;
 
 			try	{
