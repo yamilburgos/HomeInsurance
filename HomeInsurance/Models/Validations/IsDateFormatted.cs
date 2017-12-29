@@ -23,9 +23,24 @@ namespace HomeInsurance.Models {
                 return new ValidationResult("Not in proper data format (yyyy-MM-dd).");
             }
 
-			TimeSpan delta = startDate - DateTime.Now;
+            return ValidationResult.Success;
+        }
+    }
 
-			if (delta.TotalDays < -1 || delta.TotalDays > 60) {
+    public class IsPolicyDateValid : IsDateFormatted {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
+            base.IsValid(value, validationContext);
+
+            string stringValue = value as string;
+
+            if (!DateTime.TryParseExact(stringValue, "yyyy-MM-dd", CultureInfo.InvariantCulture,
+                DateTimeStyles.None, out DateTime startDate)) {
+                return new ValidationResult("Not in proper data format (yyyy-MM-dd).");
+            }
+
+            TimeSpan delta = startDate - DateTime.Now;
+
+            if (delta.TotalDays < -1 || delta.TotalDays > 60) {
                 return new ValidationResult("Policy start date must be within 60 days from today's date.");
             }
 
