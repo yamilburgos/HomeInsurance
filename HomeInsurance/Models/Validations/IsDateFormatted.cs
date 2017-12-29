@@ -17,16 +17,19 @@ namespace HomeInsurance.Models {
 
             if (regexCheck.IsMatch(stringValue))
                 return new ValidationResult("Numbers and dashes only.");
-         
-            if (!DateValidator(stringValue))
+
+            if (!DateTime.TryParseExact(stringValue, "yyyy-MM-dd", CultureInfo.InvariantCulture,
+                DateTimeStyles.None, out DateTime startDate)) {
                 return new ValidationResult("Not in proper data format (yyyy-MM-dd).");
+            }
+
+			TimeSpan delta = startDate - DateTime.Now;
+
+			if (delta.TotalDays < -1 || delta.TotalDays > 60) {
+                return new ValidationResult("Policy start date must be within 60 days from today's date.");
+            }
 
             return ValidationResult.Success;
-        }
-
-        protected bool DateValidator(string value) {
-            return DateTime.TryParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture,
-                DateTimeStyles.None, out DateTime parsed);
         }
     }
 }

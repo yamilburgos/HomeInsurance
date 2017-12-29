@@ -12,8 +12,8 @@
 <div class="form-horizontal">
     <div class="form-group">
         @Html.LabelFor(model => model.QuoteId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.QuoteId, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="col-md-1">
+            @Html.TextBoxFor(model => model.QuoteId, new { @class = "form-control", @readonly = "readonly" })
         </div>
     </div>
 
@@ -21,7 +21,6 @@
         @Html.LabelFor(model => model.PolicyStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.PolicyStartDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PolicyStartDate, "", new { @class = "text-danger" })
             <b>Policy start date cannot be more than 60 days from today's date.</b>
         </div>
     </div>
@@ -31,15 +30,17 @@
         <div class="col-md-10">
             <div class="checkbox">
                 @Html.EditorFor(model => model.Acknowledge)
-                @Html.ValidationMessageFor(model => model.Acknowledge, "", new { @class = "text-danger" })
-                <span>This is to acknowledge that I have read the 
-                @Html.ActionLink("terms and conditions", "PolicyTerms", "Details") of the policy.</span>
+                <span>
+                    This is to acknowledge that I have read the
+                    @Html.ActionLink("terms and conditions", "PolicyTerms", "Details") of the policy.
+                </span>
             </div>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
+            @Html.ValidationSummary()
             <input type="submit" value="Submit" class="btn btn-default" />
         </div>
     </div>

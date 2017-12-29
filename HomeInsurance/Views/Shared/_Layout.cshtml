@@ -10,16 +10,7 @@
 <body>
     <div class="container body-content">
         <h1 class="shared-text">Homeowner Insurance</h1>
-        @if (Session["User"] != null) {
-            <nav class='navbar navbar-default'>
-                <div class='container-fluid container'>
-                    @Html.ActionLink("Home", "LoginUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("Get Quote", "GetStarted", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", new { area = "" }, new { @class = "navbar-brand" })
-                    @Html.ActionLink("Logout", "LogoutUser", "Welcome", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-            </nav>
-        }
+        @Html.Partial("NavBar")
         <hr class="underline-border" />
         <h3 class="shared-text">@ViewBag.PageTitle</h3>
         <div class="body-padding">

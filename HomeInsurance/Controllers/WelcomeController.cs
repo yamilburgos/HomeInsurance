@@ -31,12 +31,7 @@ namespace HomeInsurance.Controllers {
 					return View("LoginUser", user);
 				}
 
-				Session["User"] = existing;
-
-                if (existing.IsAdmin)
-                    return RedirectToAction("SearchUser", "Admin");
-                else
-				    return RedirectToAction("GetStarted", "Quotes");
+                return RedirectUser(existing);
 			}
 		}
 		#endregion
@@ -63,10 +58,21 @@ namespace HomeInsurance.Controllers {
 				User user = new User(login);
 				qe.Users.Add(user);
 				qe.SaveChanges();
-				Session["User"] = user;
-				return RedirectToAction("GetStarted", "Quotes");
-			};
+                return RedirectUser(user);
+            };
 		}
-		#endregion
-	}
+        #endregion
+
+        #region Redirect User
+        private ActionResult RedirectUser(User user) {
+            Session["User"] = user;
+            Session["Admin"] = user.IsAdmin ? "" : null;
+
+            if (user.IsAdmin)
+                return RedirectToAction("SearchUser", "Admin");
+            else
+                return RedirectToAction("GetStarted", "Quotes");
+        }
+        #endregion
+    }
 }

@@ -25,8 +25,9 @@ namespace HomeInsurance.Controllers {
 		}
 
 		public ActionResult BuyPolicy()	{
-			VerifyPolicy vp = new VerifyPolicy();
-			vp.PolicyStartDate = DateTime.Now.ToString("yyyy-MM-dd");
+            VerifyPolicy vp = new VerifyPolicy {
+                PolicyStartDate = DateTime.Now.ToString("yyyy-MM-dd")
+            };
 
             try	{
 				vp.QuoteId = (int)Session["quoteId"];
@@ -41,27 +42,23 @@ namespace HomeInsurance.Controllers {
 
 		[HttpPost]
 		public ActionResult BuyPolicy(VerifyPolicy verify) {
-			DateTime startDate;
+            if (!verify.Acknowledge) {
+                ModelState.AddModelError("", "Please e-sign to buy policy.");
+                return View(verify);
+            }
 
-			if (!DateTime.TryParse(verify.PolicyStartDate, out startDate)) {
-				ModelState.AddModelError("", "Invalid Date Format");
+			if (!DateTime.TryParse(verify.PolicyStartDate, out DateTime startDate)) {
 				return View(verify);
 			}
 
-			TimeSpan delta = startDate - DateTime.Now;
-
-			if (delta.TotalDays < -1 || delta.TotalDays > 60) {
-				ModelState.AddModelError("", "Policy start date connot be more than 60 days from today's date.");
-				return View(verify);
-			}
-
-			Policy p = new Policy();
-			p.PolicyEffDate = startDate.ToString("yyyy-MM-dd");
-			p.PolicyEndDate = startDate.AddYears(1).ToString("yyyy-MM-dd");
-			p.QuoteId = (int)Session["quoteId"];
-			p.PolicyKey = p.QuoteId.ToString() + "_1";
-			p.PolicyStatus = startDate <= DateTime.Now ? "ACTIVE" : "PENDING";
-			p.PolicyTerm = 1;
+            Policy p = new Policy {
+                PolicyEffDate = startDate.ToString("yyyy-MM-dd"),
+                PolicyEndDate = startDate.AddYears(1).ToString("yyyy-MM-dd"),
+                QuoteId = (int)Session["quoteId"],
+                PolicyKey = Session["quoteId"].ToString() + "_1",
+                PolicyStatus = startDate <= DateTime.Now ? "ACTIVE" : "PENDING",
+			    PolicyTerm = 1
+            };
 
 			using (QuotesEntity qe = new QuotesEntity()) {
 				qe.Policies.Add(p);
