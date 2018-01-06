@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HomeInsurance.Models {
@@ -12,12 +13,24 @@ namespace HomeInsurance.Models {
 
         public Property Property { get; set; }
 
+        [Display(Name = "Monthly Premium")]
         public double MonthlyPremium { get; set; }
+
+        [Display(Name = "Dwelling Coverage")]
         public double DwellingCoverage { get; set; }
+
+        [Display(Name = "Detached Structure")]
         public double DetachedStructure { get; set; }
+
+        [Display(Name = "Personal Property")]
         public double PersonalProperty { get; set; }
+
+        [Display(Name = "Additional Living Expense")]
         public double AddnlLivgExpense { get; set; }
+
+        [Display(Name = "Medical Expense")]
         public double MedicalExpense { get; set; }
+
         public double Deductible { get; set; }
 
         public Quote() {}

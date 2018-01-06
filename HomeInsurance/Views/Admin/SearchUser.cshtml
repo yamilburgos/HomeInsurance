@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Search User";
     ViewBag.PageTitle = "Search User";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/ImageLayout.cshtml";
 }
 
 @using (Html.BeginForm()) {
@@ -26,8 +26,4 @@
             </div>
         </div>
     </div>
-}
-
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }

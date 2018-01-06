@@ -70,8 +70,6 @@ namespace HomeInsurance.Controllers {
 			quote.Property = property;
 			property.Location = location;
 			location.Homeowner = homeowner;
-
-			//homeowner.User = user;
 			homeowner.UserId = user.Id;
 
 			using (QuotesEntity qe = new QuotesEntity()) {

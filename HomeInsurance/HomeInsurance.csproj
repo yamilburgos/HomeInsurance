@@ -235,6 +235,7 @@
     <Content Include="Views\Shared\NavBar.cshtml" />
     <Content Include="Views\Policy\MyPolicies.cshtml" />
     <Content Include="Views\Admin\UserPolicies.cshtml" />
+    <Content Include="Views\Shared\ImageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -14,30 +14,39 @@ namespace HomeInsurance.Models {
         public Location Location { get; set; }
 
         [Range(10000, 100000000)]
+        [Display(Name = "Market Value")]
         public int MarketValue { get; set; }
 
         [Range(1860, 2030)]
+        [Display(Name = "Year Built")]
         public int YearBuilt { get; set; }
 
         [Range(50, 1000000)]
+        [Display(Name = "Square Footage")]
         public int SquareFootage { get; set; }
 
         [Required]
+        [Display(Name = "Dwelling Style")]
         public string DwellingStyle { get; set; }
 
         [Required]
+        [Display(Name = "Roof Material")]
         public string RoofMaterial { get; set; }
 
         [Required]
+        [Display(Name = "Type of Garage")]
         public string GarageType { get; set; }
 
         [Required]
+        [Display(Name = "Full Baths")]
         public string NumFullBaths { get; set; }
 
         [Required]
+        [Display(Name = "Half Baths")]
         public string NumHalfBaths { get; set; }
 
         [Required]
+        [Display(Name = "Swimming pool?")]
         public bool HasSwimmingPool { get; set; }
 
         public readonly List<string> DwellingStyles = new List<string> {

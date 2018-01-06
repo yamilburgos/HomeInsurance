@@ -1,15 +1,8 @@
 ﻿@{
     ViewBag.Title = "Get Started";
     ViewBag.PageTitle = "Get Started";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/ImageLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col-md-5">
-        <img class="center-image" src="~/Content/images/2ndHomeImg.jpg" />
-    </div>
-    <div class="col-md-5">
-        @Html.ActionLink("Get a Quote", "HomeownerForm", "Homeowner", null, new { @class = "btn btn-primary" })
-        @Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", null, new { @class = "btn btn-default" })
-    </div>
-</div>
+@Html.ActionLink("Get a Quote", "HomeownerForm", "Homeowner", null, new { @class = "btn btn-primary" })
+@Html.ActionLink("Retrieve Quote", "QuoteDetails", "Quotes", null, new { @class = "btn btn-default" })

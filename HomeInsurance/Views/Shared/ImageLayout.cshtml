@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <img class="center-image" src="~/Content/images/2ndHomeImg.jpg" />
+    </div>
+    <div class="col-md-5">
+        @RenderBody()
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

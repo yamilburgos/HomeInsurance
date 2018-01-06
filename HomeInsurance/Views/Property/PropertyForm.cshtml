@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Property Form";
     ViewBag.PageTitle = "Property Form";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/ImageLayout.cshtml";
 }
 
 @using (Html.BeginForm()) {
@@ -13,32 +13,32 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MarketValue, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.MarketValue, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.MarketValue, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MarketValue, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.YearBuilt, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.YearBuilt, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.YearBuilt, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.YearBuilt, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SquareFootage, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.SquareFootage, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.SquareFootage, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SquareFootage, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DwellingStyle, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.DwellingStyle, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.DropDownListFor(model => model.DwellingStyle, new SelectList(Model.DwellingStyles),
                     "Select a Dwelling Style", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DwellingStyle, "", new { @class = "text-danger" })
@@ -46,8 +46,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.RoofMaterial, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.RoofMaterial, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.DropDownListFor(model => model.RoofMaterial, new SelectList(Model.RoofMaterials),
                     "Select a Roof Material", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RoofMaterial, "", new { @class = "text-danger" })
@@ -55,8 +55,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GarageType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.GarageType, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.DropDownListFor(model => model.GarageType, new SelectList(Model.GarageTypes),
                     "Select a Garage Type", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.GarageType, "", new { @class = "text-danger" })
@@ -64,8 +64,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NumFullBaths, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.NumFullBaths, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.DropDownListFor(model => model.NumFullBaths, new SelectList(Model.Baths),
                     "Select Number of Full Baths", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NumFullBaths, "", new { @class = "text-danger" })
@@ -73,8 +73,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NumHalfBaths, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.NumHalfBaths, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.DropDownListFor(model => model.NumHalfBaths, new SelectList(Model.Baths),
                     "Select Number of Half Baths", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.NumHalfBaths, "", new { @class = "text-danger" })
@@ -82,8 +82,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HasSwimmingPool, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.HasSwimmingPool, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.HasSwimmingPool)
                     @Html.ValidationMessageFor(model => model.HasSwimmingPool, "", new { @class = "text-danger" })
@@ -97,8 +97,4 @@
             </div>
         </div>
     </div>
-}
-
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 }
