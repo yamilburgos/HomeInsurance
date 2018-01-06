@@ -3,7 +3,7 @@
 namespace HomeInsurance.Controllers {
 
     public class DetailsController : Controller {
-
+        #region Term Methods
         public ActionResult PolicyTerms() {
             return View();
         }
@@ -11,5 +11,6 @@ namespace HomeInsurance.Controllers {
         public ActionResult QuoteTerms() {
             return View();
         }
+        #endregion
     }
 }

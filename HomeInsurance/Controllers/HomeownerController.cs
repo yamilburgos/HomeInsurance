@@ -10,7 +10,8 @@ namespace HomeInsurance.Controllers {
         }
 
 		[HttpPost]
-		public ActionResult HomeownerForm(Homeowner homeOwner) {
+        [ValidateAntiForgeryToken]
+        public ActionResult HomeownerForm(Homeowner homeOwner) {
 			if (!ModelState.IsValid) {
 				return View(homeOwner);
 			}

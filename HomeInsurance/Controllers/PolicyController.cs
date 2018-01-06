@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace HomeInsurance.Controllers {
 
 	public class PolicyController : Controller {
-
+        #region Other Policies
         public ActionResult MyPolicies() {
             User user = Session["User"] as User;
             List<Policy> policyList = new List<Policy>();
@@ -39,8 +39,10 @@ namespace HomeInsurance.Controllers {
 				return View(p);
 			}
 		}
+        #endregion
 
-		public ActionResult BuyPolicy()	{
+        #region Buy Policy
+        public ActionResult BuyPolicy()	{
             VerifyPolicy vp = new VerifyPolicy {
                 PolicyStartDate = DateTime.Now.ToString("yyyy-MM-dd")
             };
@@ -57,7 +59,8 @@ namespace HomeInsurance.Controllers {
 		}
 
 		[HttpPost]
-		public ActionResult BuyPolicy(VerifyPolicy verify) {
+        [ValidateAntiForgeryToken]
+        public ActionResult BuyPolicy(VerifyPolicy verify) {
             if (!verify.Acknowledge) {
                 ModelState.AddModelError("", "Please e-sign to buy policy.");
                 return View(verify);
@@ -84,5 +87,6 @@ namespace HomeInsurance.Controllers {
 			Session["policyId"] = p.Id;
 			return RedirectToAction("Confirmation");
 		}
-	}
+        #endregion
+    }
 }

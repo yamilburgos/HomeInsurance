@@ -6,7 +6,7 @@ using System.Web.Mvc;
 namespace HomeInsurance.Controllers {
 
     public class QuotesController : Controller {
-
+        #region Quote Methods
         public ActionResult GetStarted() {
             return View();
         }
@@ -83,5 +83,6 @@ namespace HomeInsurance.Controllers {
 			Session["User"] = user;
 			return RedirectToAction("QuoteDetails");
 		}
-	}
+        #endregion
+    }
 }

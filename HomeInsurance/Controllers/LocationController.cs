@@ -10,7 +10,8 @@ namespace HomeInsurance.Controllers {
 		}
 
 		[HttpPost]
-		public ActionResult LocationForm(Location location) {
+        [ValidateAntiForgeryToken]
+        public ActionResult LocationForm(Location location) {
 			if (!ModelState.IsValid) {
 				return View(location);
 			}

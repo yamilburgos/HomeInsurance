@@ -4,12 +4,14 @@ using System.Web.Mvc;
 namespace HomeInsurance.Controllers {
 
     public class PropertyController : Controller {
+        #region Property Form
         public ActionResult PropertyForm() {
             return View(new Property());
         }
 
 		[HttpPost]
-		public ActionResult PropertyForm(Property property) {
+        [ValidateAntiForgeryToken]
+        public ActionResult PropertyForm(Property property) {
 			if (!ModelState.IsValid) {
 				return View(property);
 			}
@@ -18,5 +20,6 @@ namespace HomeInsurance.Controllers {
             Session["Property"] = property;
             return RedirectToAction("CoverageDetails", "Quotes");
         }
+        #endregion
     }
 }

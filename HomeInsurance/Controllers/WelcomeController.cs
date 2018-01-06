@@ -18,6 +18,7 @@ namespace HomeInsurance.Controllers {
 		}
 
 		[HttpPost]
+        [ValidateAntiForgeryToken]
 		public ActionResult LoginUser(User user) {
 			if (!ModelState.IsValid) {
 				return View("LoginUser");
@@ -43,7 +44,8 @@ namespace HomeInsurance.Controllers {
 		}
 
 		[HttpPost]
-		public ActionResult NewUser(NewUser newUser) {
+        [ValidateAntiForgeryToken]
+        public ActionResult NewUser(NewUser newUser) {
 			if (!ModelState.IsValid) {
 				return View("NewUser", newUser);
 			}

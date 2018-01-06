@@ -6,12 +6,13 @@ using System.Web.Mvc;
 namespace HomeInsurance.Controllers {
 
     public class AdminController : Controller {
-
+        #region Search User
         public ActionResult SearchUser() {
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SearchUser(LookupUser user) {
             if (!ModelState.IsValid) {
                 return View("SearchUser");
@@ -29,7 +30,9 @@ namespace HomeInsurance.Controllers {
                 return RedirectToAction("UserPolicies", "Admin");
             }
         }
+        #endregion
 
+        #region Policy Methods
         public ActionResult UserPolicies() {
             User user = Session["User"] as User;
             List<Policy> policyList = new List<Policy>();
@@ -74,5 +77,6 @@ namespace HomeInsurance.Controllers {
                 return RedirectToAction("Confirmation", "Policy");
             }
         }
+        #endregion
     }
 }
