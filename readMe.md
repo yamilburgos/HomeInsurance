@@ -3,7 +3,7 @@
 
 	https://yamilburgos.github.io/HomeInsurance
 
-![](demo.png)
+![](demo.PNG)
 
 ## Tech Stack
 - Visual C#
@@ -13,6 +13,9 @@
 - CSS
 - Visual Studio Community 2017
 - Google Chrome
+
+## Information
+An app that provides the ability to get a new home insurance quote, retrieve an already existing quote and print the quote summary. Only registered users can get, retrieve and print quotes.
 
 ## Meta
 [Yamil Burgos](https://github.com/yamilburgos/) – yamil.burgos1293@gmail.com
