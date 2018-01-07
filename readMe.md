@@ -4,6 +4,8 @@
 	https://yamilburgos.github.io/HomeInsurance
 
 ![](demo.PNG)
+![](demo2.PNG)
+![](demo3.PNG)
 
 ## Tech Stack
 - Visual C#
