@@ -14,7 +14,8 @@ namespace HomeInsurance.Controllers {
 
         #region LoginUser
         public ActionResult LoginUser() {
-			return View();
+            Session.Clear();
+            return View();
 		}
 
 		[HttpPost]
