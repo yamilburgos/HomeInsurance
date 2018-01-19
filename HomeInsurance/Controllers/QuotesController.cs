@@ -38,15 +38,13 @@ namespace HomeInsurance.Controllers {
 
         public ActionResult QuoteDetails() {
             User user = Session["User"] as User;
-            List<Quote> quoteList = new List<Quote>();
 
 			using (QuotesEntity qe = new QuotesEntity()) {
-				List<Quote> allQuotes = qe.Quotes.Include("Property.Location.Homeowner.User").ToList();
+                List<Quote> quoteList = new List<Quote>();
 
-                Homeowner ho = qe.HomeOwners.FirstOrDefault(h => h.UserId == user.Id);
-                if (ho == null) return View(quoteList);
+				quoteList.AddRange(qe.Quotes.Include("Property.Location.Homeowner.User")
+                    .Where(q => q.Property.Location.Homeowner.UserId == user.Id));
 
-				quoteList.AddRange(qe.Quotes.Where(q => q.Property.Location.HomeownerId == ho.Id));
 				return View(quoteList);
 			}
 		}
